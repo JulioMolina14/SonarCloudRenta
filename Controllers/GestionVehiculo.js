@@ -110,13 +110,8 @@ class ServicioVehiculos {
             const sql = "SELECT * FROM Vehiculos WHERE UPPER(Placa) = UPPER(:Placa) AND DISPONIBLE='SI'";
             let consulta = await this.DB.Open(sql, [Placa], false);
     
-            if (consulta && consulta.rows.length > 0) {
+            return consulta && consulta.rows.length > 0;
 
-                return true;
-
-            } else {
-               return false;
-            }
     
         } catch (error) {
             console.error(error);
