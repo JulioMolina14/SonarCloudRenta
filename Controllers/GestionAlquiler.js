@@ -249,20 +249,11 @@ class ServicioAlquiler {
     }
     
     
-    KmEmisionTieneLetra(KmEmision){
-
-
+    KmEmisionTieneLetra(KmEmision) {
         const regex = /^\d+$/;
-      
-
-        if (!regex.test(KmEmision)) //Si tiene letra
-            return true;
-        
-
-        return false;
-
+        return !regex.test(KmEmision);
     }
-
+    
 
 
 
